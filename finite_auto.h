@@ -25,6 +25,7 @@ typedef struct 	s_state
 	struct s_state		*next;
 }				t_state;
 
+
 typedef struct 	s_finite_auto
 {
 	char		*current_state;
