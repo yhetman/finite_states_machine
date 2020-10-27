@@ -6,11 +6,11 @@
 /*   By: blukasho <blukasho@ustork.com.ua>                                    */
 /*                                                                            */
 /*   Created: 2020/10/28 00:28:11 by blukasho                                 */
-/*   Updated: 2020/10/28 01:03:11 by blukasho                                 */
+/*   Updated: 2020/10/28 01:54:42 by blukasho                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include <finite_auto.h>
 
 int 				reading_file(int fd)
 {
@@ -48,8 +48,8 @@ int input_w1_w2(t_finite_auto	*machine)
 	scanf("%s", w1);
 	printf("Enter w2: ");
 	scanf("%s", w2);
-	ft_strcpy(machine->w1, w1);
-	ft_strcpy(machine->w2, w2);
+	machine->w1 = ft_strdup(w1);
+	machine->w2 = ft_strdup(w2);
 	//machine->w2 = w2;
 	return(1);
 }

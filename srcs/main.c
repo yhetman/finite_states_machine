@@ -6,11 +6,11 @@
 /*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Updated: 2020/10/28 01:45:41 by blukasho                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include <finite_auto.h>
 
 int			main(int argc, char **argv)
 {

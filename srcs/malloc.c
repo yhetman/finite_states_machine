@@ -6,11 +6,11 @@
 /*   By: blukasho <blukasho@ustork.com.ua>                                    */
 /*                                                                            */
 /*   Created: 2020/10/28 00:25:50 by blukasho                                 */
-/*   Updated: 2020/10/28 01:20:36 by blukasho                                 */
+/*   Updated: 2020/10/28 01:46:48 by blukasho                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include <finite_auto.h>
 
 t_state 				*malloc_states()
 {
