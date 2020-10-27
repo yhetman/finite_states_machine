@@ -6,7 +6,7 @@
 /*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/26 02:23:03 by yhetman          ###   ########.fr       */
+/*   Updated: 2020/10/28 00:28:36 by blukasho                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,7 +186,6 @@ int 		reading_file(int fd)
 		machine->alphabet[0], machine->start_states, machine->finish_states[0],machine->number_states);
 	return (1);
 }
-
 
 int			main(int argc, char **argv)
 {
