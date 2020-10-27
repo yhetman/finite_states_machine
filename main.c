@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+#include "finish_auto.h"
 #include "libft.h"
+
 static t_state *malloc_states()
 {
 	t_state	*states;
@@ -23,13 +22,24 @@ static t_state *malloc_states()
 	return states;
 }
 
-
-int 		reading_file(int fd, t_finite_auto	*machine)
+static t_finite_auto 	*malloc_finite_auto()
 {
+	t_finite_auto *machine;
+
+	machine = (t_finite_auto *)malloc(sizeof(t_finite_auto));
+	ft_bzero(machine, sizeof(t_finite_auto));
+	machine->states = malloc_states
+	return machine;
+}
+
+int 		reading_file(int fd)
+{
+	t_finite_auto	*machine
 	char		*line;
 	int			i;
 
 	line = NULL;
+	machine = malloc_finite_auto()
 	if (get_next_line(fd, &line))
 		machine->alphabet = ft_strsplit(line, ' ')
 	if (get_next_line(fd, &line))
@@ -38,7 +48,6 @@ int 		reading_file(int fd, t_finite_auto	*machine)
 		machine->start_states = ft_strsplit(line, ' ');
 	if (get_next_line(fd, &line))
 		machine->finish_states = ft_strsplit(line, ' ');
-	machine->states = malloc_states()
 	while(get_next_line(fd, &line))
 		machine->states = init_states(machine);
 }
@@ -47,14 +56,13 @@ int 		reading_file(int fd, t_finite_auto	*machine)
 int			main(int argc, char **argv)
 {
 	int	fd;
-	t_finite_auto	machine;
 
 	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
 	{
-		reading_file(fd, &machine);
+		reading_file(fd);
 		close(fd);
 	}
 	else
-		ft_putendl("usage ./fillit file_name");
+		ft_putendl("usage ");
 	return (1);
 }

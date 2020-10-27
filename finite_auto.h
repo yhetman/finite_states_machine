@@ -12,6 +12,11 @@
 #ifndef FINITE_AUTO_H
 # define FINITE_AUTO_H
 
+
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+
 typedef struct 	s_state
 {
 	char		*current_state;
@@ -27,9 +32,9 @@ typedef struct 	s_finite_auto
 	int			number_states;
 	char		**start_states;
 	char		**finish_states;
-	t_state 	*states;
 	char		*w1;
 	char		*w2;
+	t_state 	*states;
 }				t_finite_auto;
 
 #endif FINITE_AUTO_H
