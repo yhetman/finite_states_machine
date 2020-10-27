@@ -32,6 +32,7 @@ typedef struct 	s_finite_auto
 	char		**alphabet;
 	int			number_states;
 	char		*start_states;
+	int			number_finish;
 	char		**finish_states;
 	char		*w1;
 	char		*w2;
