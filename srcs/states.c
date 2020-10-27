@@ -14,11 +14,11 @@
 
 bool is_alphabetic(char *str, char**arr_strs)
 {
-	while(arr_strs != NULL)
+	while(arr_strs && *arr_strs != NULL)
 	{
 		if (ft_strcmp(*arr_strs, str))
 			return (true);
-		*arr_strs++;
+		arr_strs++;
 	}
 	return (false);
 }
@@ -47,7 +47,7 @@ int 	init_states(t_finite_auto	*machine, char	*line, int fd)
 	i = 0;
 	while(i < machine->number_states && (get_next_line(fd, &line)))
 	{
-		if (new_state = parse_line_to_state(line, machine->alphabet))
+		if ((new_state = parse_line_to_state(line, machine->alphabet)))
 		{
 			new_state->next = machine->states;
 			machine->states = new_state;

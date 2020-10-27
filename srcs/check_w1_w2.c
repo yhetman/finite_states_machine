@@ -16,6 +16,7 @@
 char *check_w2(t_finite_auto *machine)
 {
 	printf("%s\n", machine->current_state);
+	return("fuck");
 }
 
 char *check_w1(t_finite_auto *machine)
