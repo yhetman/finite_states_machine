@@ -9,6 +9,8 @@
 /*   Updated: 2020/10/26 02:23:03 by yhetman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#ifndef FINITE_AUTO_H
+# define FINITE_AUTO_H
 
 typedef struct 	s_state
 {
@@ -29,3 +31,5 @@ typedef struct 	s_finite_auto
 	char		*w1;
 	char		*w2;
 }				t_finite_auto;
+
+#endif FINITE_AUTO_H
