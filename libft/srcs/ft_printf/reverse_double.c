@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   reverse_double.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2019/02/22 14:25:32 by blukasho          #+#    #+#             */
+/*   Updated: 2019/05/28 19:08:04 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "ft_printf.h"
 
-int			main(int argc, char **argv)
+void				reverse_double(char *s)
 {
-	int		fd;
+	int				start;
+	int				end;
+	char			tmp;
 
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
+	end = ft_strlen(s);
+	start = 0;
+	while (start < end && (tmp = s[start]))
 	{
-		reading_file(fd);
-		close(fd);
+		s[start++] = s[--end];
+		s[end] = tmp;
 	}
-	else
-		ft_putendl("usage ");
-	return (1);
 }

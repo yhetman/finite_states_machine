@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2018/11/02 18:41:21 by blukasho          #+#    #+#             */
+/*   Updated: 2019/01/12 14:36:58 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "../includes/libft.h"
 
-int			main(int argc, char **argv)
+char	*ft_strchr(const char *src, int c)
 {
-	int		fd;
-
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
-	{
-		reading_file(fd);
-		close(fd);
-	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	while (*src)
+		if (*src++ == c)
+			return ((char *)--src);
+	if (*src == c)
+		return ((char *)src);
+	return (NULL);
 }

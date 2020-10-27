@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_percent.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2019/02/20 09:14:51 by blukasho          #+#    #+#             */
+/*   Updated: 2019/05/28 19:08:03 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "ft_printf.h"
 
-int			main(int argc, char **argv)
+void	print_percent(va_list ap)
 {
-	int		fd;
-
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
+	if (ap)
 	{
-		reading_file(fd);
-		close(fd);
 	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	print_c('%');
 }

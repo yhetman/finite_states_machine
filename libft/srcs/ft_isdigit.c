@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2018/11/04 01:05:27 by blukasho          #+#    #+#             */
+/*   Updated: 2019/01/12 14:36:55 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "../includes/libft.h"
 
-int			main(int argc, char **argv)
+int		ft_isdigit(int c)
 {
-	int		fd;
-
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
-	{
-		reading_file(fd);
-		close(fd);
-	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	if (c >= '0' && c <= '9')
+		return (1);
+	return (0);
 }

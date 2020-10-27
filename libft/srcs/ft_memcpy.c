@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_memspy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2018/10/31 11:55:28 by blukasho          #+#    #+#             */
+/*   Updated: 2019/01/12 14:36:57 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "../includes/libft.h"
 
-int			main(int argc, char **argv)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	int		fd;
+	size_t	i;
+	char	*sr;
+	char	*ds;
 
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
-	{
-		reading_file(fd);
-		close(fd);
-	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	sr = (char *)src;
+	ds = (char *)dst;
+	i = -1;
+	while (++i < n)
+		ds[i] = sr[i];
+	return (dst);
 }

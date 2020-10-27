@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2018/11/04 10:25:18 by blukasho          #+#    #+#             */
+/*   Updated: 2019/05/28 17:43:16 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "../includes/libft.h"
 
-int			main(int argc, char **argv)
+char	*ft_strnew(size_t size)
 {
-	int		fd;
+	char *str;
 
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
-	{
-		reading_file(fd);
-		close(fd);
-	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	str = NULL;
+	str = (char *)ft_memalloc(++size);
+	if (str)
+		ft_memset(str, '\0', size);
+	return (str);
 }

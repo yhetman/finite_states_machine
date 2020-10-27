@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_len_of_digit.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2019/03/15 15:32:28 by blukasho          #+#    #+#             */
+/*   Updated: 2019/03/15 15:33:28 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "../includes/libft.h"
 
-int			main(int argc, char **argv)
+__int128		ft_len_of_digit(__int128 d)
 {
-	int		fd;
+	__int128	l;
 
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
-	{
-		reading_file(fd);
-		close(fd);
-	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	l = 0;
+	while (d > 0 && ++l)
+		d /= 10;
+	return (l);
 }

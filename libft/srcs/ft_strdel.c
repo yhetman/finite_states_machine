@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <bodik1w@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2018/11/04 10:54:45 by blukasho          #+#    #+#             */
+/*   Updated: 2019/06/07 11:12:52 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "../includes/libft.h"
 
-int			main(int argc, char **argv)
+char	*ft_strdel(char **as)
 {
-	int		fd;
-
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
+	if (as && *as)
 	{
-		reading_file(fd);
-		close(fd);
+		free(*as);
+		*as = NULL;
 	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	return (NULL);
 }

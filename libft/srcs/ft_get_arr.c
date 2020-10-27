@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_get_arr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2018/11/09 18:50:10 by blukasho          #+#    #+#             */
+/*   Updated: 2019/01/12 14:36:55 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "../includes/libft.h"
 
-int			main(int argc, char **argv)
+char		**ft_get_arr(size_t x, size_t y)
 {
-	int		fd;
+	char	**res;
+	size_t	i;
 
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
+	i = 0;
+	if ((res = (char **)malloc(y * sizeof(char *))))
 	{
-		reading_file(fd);
-		close(fd);
+		while (i < y)
+			res[i++] = ft_strnew(x);
+		res[y] = NULL;
 	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	return (res);
 }

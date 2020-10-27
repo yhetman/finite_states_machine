@@ -6,7 +6,7 @@
 /*   By: blukasho <blukasho@ustork.com.ua>                                    */
 /*                                                                            */
 /*   Created: 2020/10/28 00:28:11 by blukasho                                 */
-/*   Updated: 2020/10/28 00:28:36 by blukasho                                 */
+/*   Updated: 2020/10/28 01:03:11 by blukasho                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int 		reading_file(int fd)
 	char			*line;
 	char			**fin;
 	int          	i;
+
+	if (i){}
 
 	line = NULL;
 	machine = malloc_finite_auto();

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2019/02/11 12:01:12 by blukasho          #+#    #+#             */
+/*   Updated: 2019/05/28 19:08:03 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "ft_printf.h"
 
-int			main(int argc, char **argv)
+void			print_pointer(va_list ap)
 {
-	int		fd;
+	void		*ptr;
+	intptr_t	p;
 
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
-	{
-		reading_file(fd);
-		close(fd);
-	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	ptr = va_arg(ap, void *);
+	p = (intptr_t)ptr;
+	g_data.specifier = 'p';
+	g_data.length = 1;
+	g_data.flags[0] = '#';
+	print_hex(p);
 }

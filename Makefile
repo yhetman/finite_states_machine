@@ -6,7 +6,7 @@
 #*   By: blukasho <blukasho@ustork.com.ua>                                    *#
 #*                                                                            *#
 #*   Created: 2020/10/28 00:02:38 by blukasho                                 *#
-#*   Updated: 2020/10/28 00:29:37 by blukasho                                 *#
+#*   Updated: 2020/10/28 01:20:14 by blukasho                                 *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -26,7 +26,7 @@ LIB_NAME = libft/libft.a
 
 LABSP2 = labSp2
 
-FLAGS = -Wall -Wextra -Werror -I includes
+FLAGS =  -I includes -Wall -Wextra -Werror
 
 DEBUG_FLAGS = -g3 -fsanitize=address
 

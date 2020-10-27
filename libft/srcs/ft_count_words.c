@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_count_word.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
+/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:59:14 by blukasho                                 */
+/*   Created: 2018/11/07 16:10:27 by blukasho          #+#    #+#             */
+/*   Updated: 2019/06/12 01:18:03 by blukasho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "finite_auto.h"
+#include "../includes/libft.h"
 
-int			main(int argc, char **argv)
+size_t	ft_count_words(char const *s, char c)
 {
-	int		fd;
+	size_t res;
 
-	if (argc == 2 && (fd = open(argv[1], O_RDONLY)) > -1)
+	res = 0;
+	while (*s)
 	{
-		reading_file(fd);
-		close(fd);
+		if (*s && *s != c)
+		{
+			while (*s && *s != c)
+				s++;
+			res++;
+		}
+		if (*s)
+			s++;
 	}
-	else
-		ft_putendl("usage ");
-	return (1);
+	return (res);
 }
