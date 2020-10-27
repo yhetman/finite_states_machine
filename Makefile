@@ -10,7 +10,7 @@
 #*                                                                            *#
 #* ************************************************************************** *#
 
-SRCS = read.c malloc.c
+SRCS = malloc.c states.c read.c check_w1_w2.c
 
 SRCS_DIR = srcs/
 

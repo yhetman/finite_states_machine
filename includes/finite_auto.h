@@ -14,6 +14,7 @@
 # define FINITE_AUTO_H
 
 # include <fcntl.h>
+# include <stdbool.h>
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -43,7 +44,12 @@ typedef struct 			s_finite_auto
 
 
 int 					reading_file(int fd);
-static t_state 			*malloc_states();
-static t_finite_auto 	*malloc_finite_auto()
-
+t_state 				*malloc_states();
+t_finite_auto 			*malloc_finite_auto();
+int 					init_states(t_finite_auto	*machine, char	*line, int fd);
+t_state 				*parse_line_to_state(char *line, char **alphabet);
+bool 					is_alphabetic(char *str, char**arr_strs);
+char 					*check_w2(t_finite_auto *machine);
+char 					*check_w1(t_finite_auto *machine);
+int 					input_w1_w2(t_finite_auto	*machine);
 #endif
