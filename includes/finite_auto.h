@@ -6,7 +6,7 @@
 /*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 00:31:01 by blukasho                                 */
+/*   Updated: 2020/10/28 01:01:55 by blukasho                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,10 @@ typedef struct 			s_finite_auto
 
 
 int 					reading_file(int fd);
-static t_state 			*malloc_states();
-static t_finite_auto 	*malloc_finite_auto()
+int 					input_w1_w2(t_finite_auto *machine);
+int 					init_states(t_finite_auto *machine, char *line, int fd);
+t_state 				*malloc_states();
+t_finite_auto		 	*malloc_finite_auto();
+t_state 				*parse_line_to_state(char *line);
 
 #endif
