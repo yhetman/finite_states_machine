@@ -6,7 +6,7 @@
 /*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/26 02:23:03 by yhetman          ###   ########.fr       */
+/*   Updated: 2020/10/28 10:28:35 by blukasho                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,23 @@ char **check_w2(t_finite_auto *machine)
 	final_arr = NULL;
 	while(finishes)
 	{
+		states = machine->states;
 		current_state = *finishes;
 		for (j = ft_strlen(machine->w2); j >= 0; --j)
 		{
+<<<<<<< HEAD
 			while (states->next != NULL)
+=======
+			while (states)
+>>>>>>> 64717deb4e7ab0a6e2214ada798c564701a3f232
 			{
-				if (ft_strcmp(states->transfer_state, current_state)
-					&& ft_strcmp(states->condition, machine->w2))
+				if (ft_strcmp(states->transfer_state, current_state) && ft_strcmp(states->condition, machine->w2))
+				{
 					current_state = states->current_state;
+					break;
+				}
 				states = states->next;
 			}
-			if (!current_state)
-				break;
 		}
 		if (current_state)
 		{

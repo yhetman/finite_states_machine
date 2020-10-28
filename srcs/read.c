@@ -6,7 +6,7 @@
 /*   By: blukasho <blukasho@ustork.com.ua>                                    */
 /*                                                                            */
 /*   Created: 2020/10/28 00:28:11 by blukasho                                 */
-/*   Updated: 2020/10/28 01:03:11 by blukasho                                 */
+/*   Updated: 2020/10/28 10:39:31 by blukasho                                 */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int 		reading_file(int fd)
 	{
 		fin = ft_strsplit(line, ' ');
 		machine->number_finish = ft_atoi(fin[0]);
-		for (i = 0; i < machine->number_finish; i++)
+		for (i = 0; i < (machine->number_finish); i++)
 			fin[i] = fin[i + 1];
 		machine->finish_states = fin;
 		printf("%d %s\n", machine->number_finish, machine->finish_states[0]);
