@@ -6,7 +6,7 @@
 #*   By: blukasho <blukasho@ustork.com.ua>                                    *#
 #*                                                                            *#
 #*   Created: 2020/10/28 00:02:38 by blukasho                                 *#
-#*   Updated: 2020/10/28 01:20:14 by blukasho                                 *#
+#*   Updated: 2020/10/28 10:45:51 by blukasho                                 *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -47,7 +47,7 @@ set_debug_flags:
 $(OBJ_DIR)%.o: $(SRCS_DIR)%.c
 	gcc $(FLAGS) -c $< -o $@
 
-debug: make_debug_lib set_debug_flags all
+debug: fclean make_debug_lib set_debug_flags all
 
 make_debug_lib:
 	make debug -C $(LIBFT_PATH)
@@ -66,6 +66,7 @@ clean: make_clean_lib
 
 fclean: clean
 	make fclean -C $(LIBFT_PATH)
+	rm -f $(LABSP2)
 
 re: fclean all
 
