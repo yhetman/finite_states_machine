@@ -40,12 +40,17 @@ int 		reading_file(int fd)
 		printf("%d %s\n", machine->number_finish, machine->finish_states[0]);
 	}
 	init_states(machine, line, fd);
-	//if (!input_w1_w2(machine)): printf("Error! Input words from different alphabet!"); exit();
+	if (!input_w1_w2(machine))
+	{
+		printf("Error! Input words from different alphabet!");
+		exit(-1);
+	}
 	if (!(machine->current_state = check_w1(machine)))
 	{
 		printf("Can recognize any path\n");
-		exit(0);
+		exit(-1);
 	}
+	fin = check_w2(machine);
 	printf("%s\n%s\n%s\n%d\n",
 		machine->alphabet[0], machine->start_states, machine->finish_states[0],machine->number_states);
 	return (1);
