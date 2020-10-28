@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_w1_w2.c                                             :+:      :+:    :+:   */
+/*   check_w1_w2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -52,7 +52,6 @@ char	**add_string(char **final_arr, char *current_state)
 	i = 0;
 	while(final_arr[i] != NULL)
 		i++;
-
 	new_arr = (char**)realloc(final_arr, (i + 2) * sizeof (char*));
 	if (!new_arr)
 		return (final_arr);
@@ -62,8 +61,9 @@ char	**add_string(char **final_arr, char *current_state)
 	new_arr[i] = NULL;
 	return (new_arr);
 
-
 }
+
+
 
 char **check_w2(t_finite_auto *machine)
 {
@@ -75,12 +75,13 @@ char **check_w2(t_finite_auto *machine)
 
 	finishes = machine->finish_states;
 	states = machine->states;
-	while(finishes && *finishes != NULL)
+	final_arr = NULL;
+	while(finishes)
 	{
 		current_state = *finishes;
 		for (j = ft_strlen(machine->w2); j >= 0; --j)
 		{
-			while (states && states->next)
+			while (states->next != NULL)
 			{
 				if (ft_strcmp(states->transfer_state, current_state)
 					&& ft_strcmp(states->condition, machine->w2))
@@ -91,8 +92,10 @@ char **check_w2(t_finite_auto *machine)
 				break;
 		}
 		if (current_state)
-			{printf("%s\n", current_state);
-						final_arr = add_string(final_arr, current_state);}
+		{
+			printf("%s\n", current_state);
+			final_arr = add_string(final_arr, current_state);
+		}
 		finishes++;
 	}
 	return(final_arr);

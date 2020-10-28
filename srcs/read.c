@@ -52,6 +52,6 @@ int 		reading_file(int fd)
 	}
 	fin = check_w2(machine);
 	printf("%s\n%s\n%s\n%d\n",
-		machine->alphabet[0], machine->start_states, machine->finish_states[0],machine->number_states);
+		machine->alphabet[0], machine->start_states, machine->finish_states[0], machine->number_states);
 	return (1);
 }
