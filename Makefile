@@ -6,7 +6,7 @@
 #*   By: blukasho <blukasho@ustork.com.ua>                                    *#
 #*                                                                            *#
 #*   Created: 2020/10/28 00:02:38 by blukasho                                 *#
-#*   Updated: 2020/10/28 01:20:14 by blukasho                                 *#
+#*   Updated: 2020/10/28 02:34:11 by blukasho                                 *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -63,6 +63,7 @@ make_clean_lib:
 
 clean: make_clean_lib
 	rm -rf $(OBJ_DIR)
+	rm $(LABSP2)
 
 fclean: clean
 	make fclean -C $(LIBFT_PATH)
