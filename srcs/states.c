@@ -41,11 +41,9 @@ t_state *parse_line_to_state(char *line, char **alphabet)
 
 int 	init_states(t_finite_auto	*machine, char	*line, int fd)
 {
-	int			i;
 	t_state	*new_state;
 
-	i = 0;
-	while(i < machine->number_states && (get_next_line(fd, &line)))
+	while(get_next_line(fd, &line))
 	{
 		if ((new_state = parse_line_to_state(line, machine->alphabet)))
 		{
@@ -53,7 +51,6 @@ int 	init_states(t_finite_auto	*machine, char	*line, int fd)
 			machine->states = new_state;
 			printf("%s %s %s\n", machine->states->current_state, machine->states->condition, machine->states->transfer_state);
 		}
-		i++;
 	}
 	return (1);
 }
