@@ -10,7 +10,8 @@
 #*                                                                            *#
 #* ************************************************************************** *#
 
-SRCS = malloc.c states.c read.c check_w1_w2.c input_w1_w2.c extra_error_exit.c find_connection.c   
+SRCS = malloc.c states.c read.c check_w1_w2.c input_w1_w2.c extra_error_exit.c \
+		find_connection.c free.c
 
 SRCS_DIR = srcs/
 

@@ -50,7 +50,6 @@ int 	init_states(t_finite_auto	*machine, char	*line, int fd)
 			return (0);
 		new_state->next = machine->states;
 		machine->states = new_state;
-		printf("%s %s %s\n", machine->states->current_state, machine->states->condition, machine->states->transfer_state);
 	}
 	return (1);
 }

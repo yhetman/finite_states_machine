@@ -60,4 +60,6 @@ int 					input_w1_w2(t_finite_auto	*machine);
 int						find_connection(t_finite_auto	*machine, char **final_arr);
 char					**add_string(char **final_arr, char *current_state);
 int						check_w1_w2(t_finite_auto *machine);
+int 					free_memory_before_exit(t_finite_auto *machine, int excode);
+void					free_states(t_state *states);
 #endif

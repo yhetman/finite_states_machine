@@ -62,7 +62,5 @@ int 	input_w1_w2(t_finite_auto	*machine)
 	if (!(machine->w1 = split_words(w1, machine->w1_len, machine->alphabet))
 		|| !(machine->w2 = split_words(w2, machine->w2_len, machine->alphabet)))
 		return(extra_error_exit("Error! Input words from different alphabet!"));
-	//printf("%s\n%s\n%s\n%d\n",
-	//	machine->alphabet[0], machine->start_states, machine->finish_states[0],machine->number_states);
 	return(1);
 }

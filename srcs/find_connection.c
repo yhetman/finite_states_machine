@@ -11,25 +11,6 @@
 /* ************************************************************************** */
 
 #include "finite_auto.h"
-/*
-ublic static boolean IsRoute(Integer auto[][],int v1,int v2,List<Integer> visited){
-        if(v1==v2)
-            return true;
-        List<Integer> list=new ArrayList();
-        for(int i=0;i<auto[v1].length;++i)
-            if(auto[v1][i]!=null)
-                list.add(auto[v1][i]);
-        if(list.contains(v2))
-            return true;
-        visited.add(v1);
-        for (Integer v:list)
-            if(!visited.contains(v))
-        return IsRoute(auto,v,v2,visited);
-        return false;
-    }
-
-*/
-//char   **add_string(char **final_arr, char *current_state)
 
 
 char    **find_all(char *val1, t_state *states)
@@ -78,6 +59,7 @@ bool 	isConnected(t_state *states, char *val1, char *val2, char** visited)
     for (j = 0; j < i; j++)
         if (!isContained(visited, sequence[j]))
             isConnected(states, sequence[j], val2, visited);
+    ft_str_del_arr(sequence);
 	return (false);
 
 }
@@ -96,5 +78,6 @@ int		find_connection(t_finite_auto	*machine, char **final_arr)
             return (1);
         }
     }
+    ft_str_del_arr(visited);
 	return(0);
 }

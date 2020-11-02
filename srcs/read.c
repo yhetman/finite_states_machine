@@ -12,6 +12,7 @@
 
 #include "finite_auto.h"
 
+
 int 		reading_file(int fd)
 {
 	t_finite_auto	*machine;
@@ -34,14 +35,14 @@ int 		reading_file(int fd)
 	{
 		fin = ft_strsplit(line, ' ');
 		machine->number_finish = ft_atoi(fin[0]);
-		fin = &fin[1];
-		machine->finish_states = fin;
-		printf("%d %s\n", machine->number_finish, machine->finish_states[0]);
+		//fin = &fin[1];
+		machine->finish_states = &fin[1];
 	}
 	init_states(machine, line, fd);
+	free(line);
 	if (!input_w1_w2(machine))
-		return (0);
+		return (free_memory_before_exit(machine, 0));
 	if (!check_w1_w2(machine))
-		return (0);
+		return (free_memory_before_exit(machine, 0));
 	return (1);
 }
