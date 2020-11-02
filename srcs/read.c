@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                                            */
-/*   read.c                                                                   */
-/*                                                                            */
-/*   By: blukasho <blukasho@ustork.com.ua>                                    */
-/*                                                                            */
-/*   Created: 2020/10/28 00:28:11 by blukasho                                 */
-/*   Updated: 2020/10/28 10:39:31 by blukasho                                 */
+/*                                                        				      */
+/*   read.c                             	              				      */
+/*                                                          				  */
+/*   By: yhetman <yhetman@student.unit.ua>                    				  */
+/*                                                        				      */
+/*   Created: 2020/10/19 18:04:00 by yhetman           				          */
+/*   Updated: 2020/10/28 10:28:35 by yhetman                                  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,14 @@ int 		reading_file(int fd)
 	{
 		fin = ft_strsplit(line, ' ');
 		machine->number_finish = ft_atoi(fin[0]);
-		for (i = 0; i < (machine->number_finish); i++)
-			fin[i] = fin[i + 1];
+		fin = &fin[1];
 		machine->finish_states = fin;
 		printf("%d %s\n", machine->number_finish, machine->finish_states[0]);
 	}
 	init_states(machine, line, fd);
 	if (!input_w1_w2(machine))
-	{
-		printf("Error! Input words from different alphabet!");
-		exit(-1);
-	}
-	if (!(machine->current_state = check_w1(machine)))
-	{
-		printf("Can recognize any path\n");
-		exit(-1);
-	}
-	fin = check_w2(machine);
-	printf("%s\n%s\n%s\n%d\n",
-		machine->alphabet[0], machine->start_states, machine->finish_states[0],machine->number_states);
+		return (0);
+	if (!check_w1_w2(machine))
+		return (0);
 	return (1);
 }

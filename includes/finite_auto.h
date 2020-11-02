@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   finite_auto.h                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yhetman <yhetman@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/19 18:04:00 by yhetman           #+#    #+#             */
-/*   Updated: 2020/10/28 01:01:55 by blukasho                                 */
+/*                                                        				      */
+/*   finite_auto.h                         	              				      */
+/*                                                          				  */
+/*   By: yhetman <yhetman@student.unit.ua>                    				  */
+/*                                                        				      */
+/*   Created: 2020/10/19 18:04:00 by yhetman           				          */
+/*   Updated: 2020/10/28 10:28:35 by yhetman                                  */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ typedef struct 			s_finite_auto
 	int					number_finish;
 	char				*start_states;
 	char				**finish_states;
-	char				*w1;
-	char				*w2;
+	char				**w1;
+	char				**w2;
+	unsigned int 		w1_len;
+	unsigned int 		w2_len;
 	t_state 			*states;
 }						t_finite_auto;
 
@@ -49,7 +51,13 @@ t_finite_auto 			*malloc_finite_auto();
 int 					init_states(t_finite_auto	*machine, char	*line, int fd);
 t_state 				*parse_line_to_state(char *line, char **alphabet);
 bool 					is_alphabetic(char *str, char**arr_strs);
+bool					is_alphletter(char letter, char **arr_strs);
+char 					**split_words(char *word, int len, char**alphabet);
+int 					extra_error_exit(char *str);
 char 					**check_w2(t_finite_auto *machine);
 char 					*check_w1(t_finite_auto *machine);
 int 					input_w1_w2(t_finite_auto	*machine);
+int						find_connection(t_finite_auto	*machine, char **final_arr);
+char					**add_string(char **final_arr, char *current_state);
+int						check_w1_w2(t_finite_auto *machine);
 #endif
