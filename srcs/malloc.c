@@ -3,10 +3,10 @@
 /*                                                                            */
 /*   malloc.c                                                                 */
 /*                                                                            */
-/*   By: blukasho <blukasho@ustork.com.ua>                                    */
+/*   By: yhetman <yhetman@student.unit.ua>                                    */
 /*                                                                            */
-/*   Created: 2020/10/28 00:25:50 by blukasho                                 */
-/*   Updated: 2020/10/28 01:20:36 by blukasho                                 */
+/*   Created: 2020/10/28 00:25:50 by yhetman                                  */
+/*   Updated: 2020/10/28 01:20:36 by yhetman                                  */
 /*                                                                            */
 /* ************************************************************************** */
 

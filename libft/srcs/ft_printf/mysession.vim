@@ -11,8 +11,12 @@ nnoremap th :tabp
 nnoremap tl :tabn
 nnoremap tu :tabp
 nnoremap ti :tabn
-nnoremap wq :wa:mksession! mysession.vim:qa
-nnoremap ws :wa:mksession! mysession.vim:sh
+nnoremap wq :wa
+:mksession! mysession.vim
+:qa
+nnoremap ws :wa
+:mksession! mysession.vim
+:sh
 vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#BrowseX(expand((exists("g:netrw_gx")? g:netrw_gx : '<cfile>')),netrw#CheckIfRemote())
 inoremap  u

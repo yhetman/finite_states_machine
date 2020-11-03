@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        				      */
-/*   find_connection.c                         	              				      */
+/*   find_connection.c                         	                		      */
 /*                                                          				  */
 /*   By: yhetman <yhetman@student.unit.ua>                    				  */
 /*                                                        				      */

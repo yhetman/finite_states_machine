@@ -3,10 +3,10 @@
 #*                                                                            *#
 #*   Makefile                                                                 *#
 #*                                                                            *#
-#*   By: blukasho <blukasho@ustork.com.ua>                                    *#
+#*   By: yhetman <yhetman@student.unit.ua>                                    *#
 #*                                                                            *#
-#*   Created: 2020/10/28 00:02:38 by blukasho                                 *#
-#*   Updated: 2020/10/28 10:45:51 by blukasho                                 *#
+#*   Created: 2020/10/28 00:02:38 by yhetman                                  *#
+#*   Updated: 2020/10/28 10:45:51 by yhetman                                  *#
 #*                                                                            *#
 #* ************************************************************************** *#
 

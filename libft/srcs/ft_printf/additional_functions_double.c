@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   additional_functions_double.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: blukasho <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: yhetman <yhetman@student.unit.ua>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/03/22 18:33:13 by blukasho          #+#    #+#             */
-/*   Updated: 2019/05/28 19:08:02 by blukasho         ###   ########.fr       */
+/*   Created: 2019/03/22 18:33:13 by yhetman           #+#    #+#             */
+/*   Updated: 2019/05/28 19:08:02 by yhetman          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
